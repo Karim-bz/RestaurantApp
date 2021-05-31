@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ajouter une catégorie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+    <ion-list>
+      <ion-item>
+        <ion-label>Nom</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Image</ion-label>
+        <ion-input type="text" formControlName="image"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit">Ajouter</ion-button>
+  </form>
+</ion-content>

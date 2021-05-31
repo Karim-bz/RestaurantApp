@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>restaurant Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img [src]="Restaurent.image" alt="ion" >
+  <ion-list>
+    <ion-item>
+      <ion-note slot="start">Name </ion-note>
+      <ion-label><b>{{Restaurent.name}}</b></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-note slot="start">Adress </ion-note>
+      <ion-label><b>{{Restaurent.adress}}</b></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-note slot="start">Category </ion-note>
+      <ion-label><b>{{category}}</b></ion-label>
+      <ion-avatar>
+        <img [src]="categoryImage">
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-fab slot="fixed" horizontal="start" vertical="bottom">
+    <ion-fab-button color="danger" (click)="deleteRestaurant(Restaurent._id)">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

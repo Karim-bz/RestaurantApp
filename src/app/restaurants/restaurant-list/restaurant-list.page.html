@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Restaurant List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of Restaurents" [routerLink]="'/restaurant-details/'+item._id">
+      <ion-avatar slot="start">
+        <ion-img [src]="item.image"></ion-img>
+      </ion-avatar>
+      <ion-label>{{item.name}}</ion-label>
+    </ion-item>
+    <div *ngIf="!Restaurents?.length">
+      <img src="../../../assets/629-empty-box.gif" alt="empty">
+    </div>
+  </ion-list>
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button [routerLink]="'/add-restaurant/'+idCat">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
